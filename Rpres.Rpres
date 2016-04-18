@@ -1,0 +1,42 @@
+Scatter Plot Shiny App with Progress bar
+========================================================
+author: rc1925
+date: 
+
+First Slide
+========================================================
+
+On the next few slides, will briefly intorduce the 
+
+- Progress bar
+- Passing variables from the dropdowns to the plot function
+- The plot
+
+Slide With Code
+========================================================
+
+```{r, eval=FALSE}
+    withProgress(message = 'Loading', value = 0, {
+      n <- 10
+      
+      for (i in 1:n) {
+
+        Sys.sleep(0.1)
+      }
+    })
+```
+
+Slide With Code II.
+========================================================
+
+```{r, eval=FALSE}
+    plot(mtcars[names(mtcars) == as.character(input$xaxis)][[1]], mtcars[names(mtcars) ==     as.character(input$yaxis)][[1]],
+         xlab = input$xaxis, ylab = input$yaxis)
+```
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(mtcars$mpg, mtcars$mpg)
+```
